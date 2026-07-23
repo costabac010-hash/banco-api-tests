@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test/**/*.test.js --timeout 10000"
+    "test": "mocha ./test/**/*.test.js --reporter mochawesome --reporter-options overwrite=true,html=true,json=true --timeout 10000"
   },
   "keywords": [],
   "author": "",
