@@ -23,25 +23,6 @@ Antes de iniciar, certifique-se de ter instalado em sua máquina:
 
 ---
 
-## Estrutura do Projeto
-
-banco-api-test/
-├── fixtures/              # Dados estáticos em JSON para apoio aos testes
-│   ├── postLogin.json
-│   └── posTransferencias.json
-├── helpers/               # Funções utilitárias e de suporte
-│   └── autenticacao.js    # Função para geração automatizada de Token JWT
-├── test/                  # Suíte de testes automatizados
-│   ├── login.test.js      # Cobertura dos cenários de Autenticação
-│   └── transferencias.test.js # Cobertura das rotas de Transferência
-├── .env                   # Arquivo de variáveis de ambiente
-├── .env.example           # Modelo do arquivo de variáveis de ambiente
-├── .gitignore             # Arquivos ignorados no versionamento Git
-├── package.json           # Dependências e scripts do projeto
-└── README.md              # Documentação do projeto
-
----
-
 ## Arquivos Não Versionados (.gitignore) 
 
 Por razões de segurança e boas práticas de desenvolvimento, os seguintes arquivos/pastas não são enviados ao GitHub:
@@ -67,16 +48,23 @@ Configure as variáveis de ambiente: Crie um arquivo .env na raiz do projeto con
 * **Documentação da API via Swagger:** http://localhost:3000/api-docs/#/Transferencias
 
 * **Rota /login**
+
 POST /login: Valida autenticação com credenciais válidas e retorno do token em formato string.
 
 * **Rota /transferencias**
+
 POST /transferencias:
+
 201: Sucesso ao realizar transferência igual ou acima de R$ 10,00.
+
 422: Falha ao tentar transferir valores abaixo de R$ 10,00.
 
 GET /transferencias/{id}:
+
 200: Sucesso ao buscar transferência por ID válido, validando estrutura dos dados, tipos de variáveis e valores de retorno.
+
 GET /transferencias:
+
 200: Validação de paginação e limitação de registros retornados na consulta.
 
 * **Para rodar toda a suíte de testes e gerar o relatório do Mochawesome: npm test**
